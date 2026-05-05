@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Šintoismus: Cesta k čistotě</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary: #bc002d; --dark: #1a1a1a; --light: #fdfbf7; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans JP', sans-serif; background-color: var(--light); color: #333; line-height: 1.7; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        nav { background: white; padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; text-decoration: none; color: var(--primary); font-weight: bold; }
+        
+        /* Úvodní fotka - Pagoda a Fuji */
+        #hero { 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('1000005265.jpg');
+            background-size: cover; background-position: center; height: 80vh; display: flex; align-items: center; justify-content: center; color: white; text-align: center; margin-top: 50px;
+        }
+        
+        section { padding: 60px 0; }
+        .content-box { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        
+        .places-flex { display: flex; gap: 40px; align-items: center; margin-top: 30px; }
+        .places-img { flex: 1; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .places-img img { width: 100%; display: block; }
+        
+        .myth-box { display: flex; background: white; border-radius: 15px; overflow: hidden; margin-top: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        
+        /* Fotka Harakiri */
+        .myth-img { 
+            flex: 1; 
+            min-height: 400px; 
+            background-image: url('1000005239.jpg'); 
+            background-size: contain; 
+            background-repeat: no-repeat; 
+            background-position: center; 
+        }
+        
+        .myth-text { flex: 1.2; padding: 40px; }
+        footer { background: var(--dark); color: white; padding: 30px; text-align: center; }
+        @media (max-width: 768px) { .places-flex, .myth-box { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <nav><div class="container"><a href="#" class="logo">神道 Šintó</a></div></nav>
+    <header id="hero"><h1>ŠINTOISMUS: CESTA BOHŮ</h1></header>
+    <main class="container">
+        <section id="uvod">
+            <div class="content-box">
+                <h2>O Šintoismu</h2>
+                <p>Šintoismus je japonská cesta harmonie s přírodou a božstvy Kami. Učí nás, že svět je posvátné místo.</p>
+            </div>
+        </section>
+        <section id="mista">
+            <div class="places-flex">
+                <div class="places-img">
+                    <img src="1000005203.jpg" alt="Torii">
+                </div>
+                <div class="places-text">
+                    <h3>Svatyně Fushimi Inari</h3>
+                    <p>Průchod do světa Kami skrze tisíce bran torii.</p>
+                </div>
+            </div>
+        </section>
+        <section id="myty">
+            <div class="myth-box">
+                <div class="myth-img"></div>
+                <div class="myth-text">
+                    <h3>Pravda o Harakiri</h3>
+                    <p>Harakiri není šintoismus. Patří k samurajům (Bushidó). Šintó miluje život a čistotu.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer><p>© 2026 Šintoismus Projekt</p></footer>
+</body>
+</html>
