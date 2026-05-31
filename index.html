@@ -13,68 +13,136 @@
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         nav { background: white; padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
         .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; text-decoration: none; color: var(--primary); font-weight: bold; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-links { list-style: none; display: flex; gap: 20px; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
         
         /* Úvodní fotka - Pagoda a Fuji */
         #hero { 
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('1000005265.jpg');
-            background-size: cover; background-position: center; height: 80vh; display: flex; align-items: center; justify-content: center; color: white; text-align: center; margin-top: 50px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('1000005265.jpg');
+            background-size: cover; background-position: center; height: 85vh; display: flex; align-items: center; justify-content: center; color: white; text-align: center; margin-top: 50px;
         }
+        #hero h1 { font-family: 'Playfair Display', serif; font-size: 4rem; letter-spacing: 2px; text-shadow: 2px 2px 15px rgba(0,0,0,0.6); }
+        #hero p { font-size: 1.3rem; margin-top: 10px; font-weight: 300; text-shadow: 1px 1px 8px rgba(0,0,0,0.5); }
         
-        section { padding: 60px 0; }
-        .content-box { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        section { padding: 70px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--dark); margin-bottom: 25px; position: relative; }
+        .section-title::after { content: ''; display: block; width: 50px; height: 3px; background: var(--primary); margin-top: 10px; }
         
-        .places-flex { display: flex; gap: 40px; align-items: center; margin-top: 30px; }
-        .places-img { flex: 1; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .content-box { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); margin-bottom: 30px; }
+        .content-box p { margin-bottom: 20px; font-size: 1.1rem; color: #444; }
+        .content-box h3 { font-size: 1.5rem; color: var(--primary); margin: 25px 0 15px; font-family: 'Playfair Display', serif; }
+        
+        .places-flex { display: flex; gap: 50px; align-items: center; margin-top: 30px; }
+        .places-img { flex: 1; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.15); border: 6px solid white; }
         .places-img img { width: 100%; display: block; }
+        .places-text { flex: 1.2; }
+        .places-text p { margin-bottom: 15px; font-size: 1.1rem; }
         
-        .myth-box { display: flex; background: white; border-radius: 15px; overflow: hidden; margin-top: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .myth-box { display: flex; background: white; border-radius: 15px; overflow: hidden; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         
         /* Fotka Harakiri */
         .myth-img { 
             flex: 1; 
-            min-height: 400px; 
+            min-height: 450px; 
             background-image: url('1000005239.jpg'); 
             background-size: contain; 
             background-repeat: no-repeat; 
-            background-position: center; 
+            background-position: center;
+            background-color: #ffffff;
+            padding: 20px;
         }
         
-        .myth-text { flex: 1.2; padding: 40px; }
-        footer { background: var(--dark); color: white; padding: 30px; text-align: center; }
-        @media (max-width: 768px) { .places-flex, .myth-box { flex-direction: column; } }
+        .myth-text { flex: 1.3; padding: 50px; display: flex; flex-direction: column; justify-content: center; }
+        .myth-text h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary); margin-bottom: 20px; }
+        .myth-text p { font-size: 1.1rem; margin-bottom: 15px; }
+
+        footer { background: var(--dark); color: white; padding: 40px 0; text-align: center; font-size: 0.9rem; letter-spacing: 1px; }
+        footer p { opacity: 0.6; }
+        
+        @media (max-width: 768px) { 
+            #hero h1 { font-size: 2.5rem; }
+            .places-flex, .myth-box { flex-direction: column; } 
+            .myth-img { min-height: 300px; background-size: cover; }
+        }
     </style>
 </head>
 <body>
-    <nav><div class="container"><a href="#" class="logo">神道 Šintó</a></div></nav>
-    <header id="hero"><h1>ŠINTOISMUS: CESTA BOHŮ</h1></header>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">神道 Šintó</a>
+            <ul class="nav-links">
+                <li><a href="#uvod">Filosofie</a></li>
+                <li><a href="#mista">Svatyně</a></li>
+                <li><a href="#myty">Mýty</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <header id="hero">
+        <div class="container">
+            <h1>ŠINTOISMUS: CESTA BOHŮ</h1>
+            <p>Tradiční japonská filozofie čistoty, respektu a věčné harmonie</p>
+        </div>
+    </header>
+    
     <main class="container">
+        <!-- SEKCIE 1: FILOSOFIE -->
         <section id="uvod">
             <div class="content-box">
-                <h2>O Šintoismu</h2>
-                <p>Šintoismus je japonská cesta harmonie s přírodou a božstvy Kami. Učí nás, že svět je posvátné místo.</p>
+                <h2 class="section-title">Co je to šintoismus?</h2>
+                <p>Šintoismus (v japonštině <em>Šintó</em> – doslova „Cesta božstev“) není klasické náboženství založené na dogmatech, svatých knihách nebo jednom prorokovi. Jde o hluboce zakořeněný životní styl a způsob vnímání světa, který formuje japonskou kulturu už po tisíciletí. Učí lidstvo žít v absolutním souladu s přírodou a projevovat vděčnost všemu živému i neživému.</p>
+                
+                <h3>Svět obývaný duchy Kami</h3>
+                <p>Základním pilířem šintoismu je víra v <strong>Kami</strong>. Tento pojem se často překládá jako „bohové“, ale přesnější význam zahrnuje duchovní energii, posvátné síly a podstatu přírody. Kami sídlí v majestátních horách, starých stromech, dravých řekách, ale mohou jimi být i duchové zemřelých předků. Celý svět je tak podle Šintó živý a protkaný božskou přítomností.</p>
+                
+                <h3>Koncept Kegare: Když se duše zakalí</h3>
+                <p>Na rozdíl od západních náboženství šintoismus nezná pojem dědičného hříchu. Člověk se rodí čistý a dobrý. V průběhu života se však jeho duše může dostat do stavu zvaného <strong>Kegare</strong> (rituální znečištění nebo povadnutí ducha). Kegare není morální odsouzení, ale spíše nános duchovního prachu a únavy, který vzniká vlivem špatných skutků, kontaktu se smrtí, nemocí nebo hněvu. Tento stav člověka odděluje od Kami a bere mu vnitřní klid.</p>
+
+                <h3>Sodomie a pozemské poklesky</h3>
+                <p>V nejstarších šintoistických modlitbách a rituálních textech, známých jako <em>Norito</em>, se setkáváme s rozdělením hříchů na nebeské a pozemské (<em>Kuni-no-cumi</em>). Mezi tyto závažné pozemské poklesky a tabu, která způsobovala těžké rituální znečištění společnosti, patřily činy narušující přirozený řád komunity – například násilné činy, incest, poškození úrody nebo sodomie. Tyto prohřešky nevyžadovaly věčné zatracení v pekle, ale okamžité očištění celé komunity, aby se obnovil narušený mír.</p>
+                
+                <h3>Óharae: Síla Velké očisty</h3>
+                <p>Protože je šintoismus ze své podstaty neuvěřitelně optimistický, věří, že každé znečištění i Kegare lze ze srdce smýt. K tomu slouží rituál <strong>Óharae</strong> (Velká očista), který se tradičně koná po celém Japonsku dvakrát do roka – koncem června a koncem prosince. Během tohoto obřadu kněží očišťují věřící pomocí rituálních pomůcek a symbolicky splachují veškeré nánosy negativní energie, hříchů a nečistot do řek a moří, čímž lidem vrací jejich původní jasné srdce (<em>Magokoro</em>).</p>
             </div>
         </section>
+
+        <!-- SEKCIE 2: POSVÁTNÁ MÍSTA -->
         <section id="mista">
+            <h2 class="section-title">Posvátná místa</h2>
             <div class="places-flex">
                 <div class="places-img">
                     <img src="1000005203.jpg" alt="Torii">
                 </div>
                 <div class="places-text">
-                    <h3>Svatyně Fushimi Inari</h3>
-                    <p>Průchod do světa Kami skrze tisíce bran torii.</p>
+                    <h3>Svatyně Fushimi Inari-taisha</h3>
+                    <p>Svatyně v šintoismu nejsou místa, kam by lidé chodili poslouchat kázání. Jsou to skutečné, pozemské domovy božstev Kami. Jedním z nejposvátnějších míst v celém Japonsku je komplex <strong>Fushimi Inari-taisha</strong> v Kjótu, zasvěcený božstvu rýže, zemědělství a obchodu Inari.</p>
+                    <p>Tento komplex je světoznámý svými fascinujícími koridory, které tvoří více než 10 000 jasně oranžovo-červených bran <strong>Torii</strong>. Tyto brány lemují cesty stoupající hlubokým, tajuplným lesem na posvátnou horu Inari.</p>
+                    <p>V šintoistické architektuře má brána Torii naprosto zásadní význam: funguje jako rituální předěl mezi profánním (obyčejným) světem lidí a posvátnou půdou bohů. Každý, kdo pod bránou projde, symbolicky vstupuje do čistého světa Kami.</p>
                 </div>
             </div>
         </section>
+
+        <!-- SEKCIE 3: MÝTY -->
         <section id="myty">
+            <h2 class="section-title">Mýty a fakta</h2>
             <div class="myth-box">
                 <div class="myth-img"></div>
                 <div class="myth-text">
-                    <h3>Pravda o Harakiri</h3>
-                    <p>Harakiri není šintoismus. Patří k samurajům (Bushidó). Šintó miluje život a čistotu.</p>
+                    <h3>Pravda o Harakiri (Seppuku)</h3>
+                    <p>Mezi lidmi na Západě existuje častý mýtus, který rituální samurajskou sebevraždu, známou jako <strong>Harakiri</strong> nebo správně <em>Seppuku</em>, automaticky spojuje se šintoistickou vírou. To je však hluboký omyl.</p>
+                    <p>Tento krvavý rituál byl striktní součástí morálního a vojenského kodexu samurajů zvaného <strong>Bushidó</strong> (Cesta bojovníka), který byl silně ovlivněn zenovým buddhismem a konfuciánstvím, nikoliv šintoismem.</p>
+                    <p>Samotný šintoismus se smrti ze všech sil vyhýbá. Smrt a krev jsou v Šintó považovány za nejvyšší formu znečištění (<em>Kegare</em>). Šintoističtí kněží v minulosti nesměli na pohřby ani vstoupit. Z tohoto důvodu dodnes platí v Japonsku zajímavé rozdělení: svatby a oslavy života probíhají v šintoistických svatyních, ale smuteční pohřby jsou téměř výhradně záležitostí buddhistických chrámů.</p>
                 </div>
             </div>
         </section>
     </main>
-    <footer><p>© 2026 Šintoismus Projekt</p></footer>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Šintoismus: Studentský projekt do Občanské výchovy</p>
+        </div>
+    </footer>
 </body>
 </html>
